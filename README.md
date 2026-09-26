@@ -13,8 +13,17 @@ your own idea).
 | File | What it is |
 |---|---|
 | `index.html` | The live deck — real CSS 3D page-turn (rotating carousel), autoplay, presenter notes, overview grid, parallax camera. Self-contained, no build step. |
+| `Fresko-PSC-XI-Concept-Note.pptx` | The PowerPoint version of the same 15 slides, with a **Cube (3D) transition on every slide** and **auto-advance timings** — press F5 (Slide Show) and it turns and moves by itself. |
+| `tools/build_pptx.py` | Rebuilds the `.pptx` from scratch (`python3 tools/build_pptx.py`). Edit content here, not by hand. |
 | `CONCEPT-NOTE.md` | The full written concept note (Sections I–X) with sources, assumptions and unit economics — submission-ready text. |
-| `assets/` | Brand logo, hero photo and cold-room photo used by the deck. |
+| `assets/` | Brand logo, hero photo and cold-room photo used by both decks. |
+
+### About the PowerPoint version
+
+- **3D page turn:** every slide carries PowerPoint's *Cube* transition (`p14:cube dir="l"`), with a `push` fallback for older readers.
+- **Auto-advance:** each slide has its own `advTm` (13–18 s), and `useTimings` is on by default — so the show runs itself in Slide Show mode. Adjust the numbers in `tools/build_pptx.py` (the `slide(13000)` calls).
+- Speaker notes are attached to all 15 slides.
+- Fonts: Calibri; colours match the HTML deck.
 
 ## Run the deck
 
